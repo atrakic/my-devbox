@@ -6,7 +6,7 @@
     "nodejs@20",
     "git",
     "uv@latest",
-    "go@1.25.1"
+    "go@1.22.2"
   ],
   "shell": {
     "init_hook": [
