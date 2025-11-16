@@ -18,9 +18,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Devbox
-        uses: jetify-com/devbox-install-action@v0.11.0
-        with:
-          enable-cache: true
+        uses: jetify-com/devbox-install-action@v0.12.0
+
+      - name: Run arbitrary commands
+        run: devbox run -- echo "done!"
 
       - name: Run devbox shell
         run: devbox run test
