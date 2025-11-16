@@ -30,7 +30,7 @@ examples: ## Run all example applications
 	@devbox run -- go run examples/go/main.go
 	@echo ""
 	@echo "Running TypeScript example..."
-	@cd examples/typescript && devbox run -- tsc hello.ts && devbox run -- node hello.js
+	@devbox run -- node examples/typescript/hello.js
 
 install-devbox: ## Install Devbox (if not already installed)
 	@if ! command -v devbox &> /dev/null; then \

@@ -24,4 +24,4 @@ jobs:
           devbox run -- python examples/python/hello.py
           devbox run -- dotnet run examples/dotnet/Program.cs
           devbox run -- go run examples/go/main.go
-          cd examples/typescript && devbox run -- tsc hello.ts && devbox run -- node hello.js
+          devbox run -- node examples/typescript/hello.js
