@@ -1,5 +1,8 @@
 # My Development Box
 
+[![CI/CD Pipeline](https://github.com/atrakic/my-devbox/actions/workflows/ci.yml/badge.svg)](https://github.com/atrakic/my-devbox/actions/workflows/ci.yml)
+
+
 Automated development environment using [Jetify Devbox](https://www.jetify.com/devbox) for multi-language development.
 
 ## Overview
