@@ -1,0 +1,16 @@
+name: Test with Devbox
+
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install devbox
+        uses: jetify-com/devbox-install-action@v0.9.0
+        with: 
+          enable_cache: 'true'
+
+      - name: Run a Test Script
+        run: devbox run test
