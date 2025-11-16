@@ -10,7 +10,7 @@ jobs:
       - name: Install devbox
         uses: jetify-com/devbox-install-action@v0.9.0
         with: 
-          enable_cache: 'true'
+          enable-cache: 'true'
 
       - name: Run a Test Script
         run: devbox run test
