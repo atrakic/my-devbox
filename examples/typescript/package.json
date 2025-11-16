@@ -1,0 +1,13 @@
+{
+  "name": "devbox-typescript-example",
+  "version": "1.0.0",
+  "description": "TypeScript example for Devbox environment",
+  "main": "hello.js",
+  "scripts": {
+    "build": "tsc hello.ts",
+    "start": "node hello.js"
+  },
+  "keywords": ["devbox", "typescript", "example"],
+  "author": "",
+  "license": "MIT"
+}

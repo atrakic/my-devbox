@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/main/devbox.schema.json",
+  "packages": [
+    "python@3.11",
+    "dotnet-sdk@8.0",
+    "go@1.21",
+    "nodejs@20",
+    "typescript",
+    "git"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to your development environment!'",
+      "echo 'Available tools: Python, .NET SDK, Go, Node.js, TypeScript'",
+      "python --version",
+      "dotnet --version",
+      "go version",
+      "node --version",
+      "tsc --version"
+    ],
+    "scripts": {
+      "test": [
+        "echo 'Running tests...'",
+        "python --version && echo 'Python OK'",
+        "dotnet --version && echo '.NET OK'",
+        "go version && echo 'Go OK'",
+        "node --version && echo 'Node.js OK'",
+        "tsc --version && echo 'TypeScript OK'"
+      ],
+      "setup": [
+        "echo 'Setting up development environment...'",
+        "pip install --upgrade pip",
+        "npm install -g npm@latest"
+      ]
+    }
+  },
+  "nixpkgs": {
+    "commit": "nixpkgs-unstable"
+  }
+}

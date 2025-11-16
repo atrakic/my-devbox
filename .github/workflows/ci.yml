@@ -1,0 +1,108 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  devbox-setup:
+    name: Test Devbox Environment
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Devbox
+        uses: jetify-com/devbox-install-action@v0.11.0
+        with:
+          enable-cache: true
+
+      - name: Run devbox shell
+        run: devbox run test
+
+      - name: Verify Python
+        run: devbox run -- python --version
+
+      - name: Verify .NET
+        run: devbox run -- dotnet --version
+
+      - name: Verify Go
+        run: devbox run -- go version
+
+      - name: Verify Node.js
+        run: devbox run -- node --version
+
+      - name: Verify TypeScript
+        run: devbox run -- tsc --version
+
+  python-test:
+    name: Python Tests
+    runs-on: ubuntu-latest
+    needs: devbox-setup
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Devbox
+        uses: jetify-com/devbox-install-action@v0.11.0
+
+      - name: Run Python tests
+        run: |
+          devbox run -- python -m pip install pytest
+          devbox run -- python -m pytest --version || echo "No tests yet"
+
+  dotnet-test:
+    name: .NET Tests
+    runs-on: ubuntu-latest
+    needs: devbox-setup
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Devbox
+        uses: jetify-com/devbox-install-action@v0.11.0
+
+      - name: Run .NET tests
+        run: |
+          devbox run -- dotnet --info || echo "No .NET projects yet"
+
+  go-test:
+    name: Go Tests
+    runs-on: ubuntu-latest
+    needs: devbox-setup
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Devbox
+        uses: jetify-com/devbox-install-action@v0.11.0
+
+      - name: Run Go tests
+        run: |
+          devbox run -- go version
+          echo "No Go projects yet"
+
+  typescript-test:
+    name: TypeScript Tests
+    runs-on: ubuntu-latest
+    needs: devbox-setup
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Devbox
+        uses: jetify-com/devbox-install-action@v0.11.0
+
+      - name: Run TypeScript tests
+        run: |
+          devbox run -- npm --version
+          devbox run -- tsc --version
+          echo "No TypeScript projects yet"
