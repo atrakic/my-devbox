@@ -9,15 +9,7 @@
     "go@1.22.2"
   ],
   "shell": {
-    "init_hook": [
-      "echo 'Welcome to your development environment!'",
-      "echo 'Available tools: Python, .NET SDK, Go, Node.js, TypeScript'",
-      "python --version",
-      "dotnet --version",
-      "go version",
-      "node --version",
-      "tsc --version"
-    ],
+    "init_hook": [],
     "scripts": {
       "test": [
         "echo 'Running tests...'",
