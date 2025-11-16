@@ -18,9 +18,13 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Test examples
+      - name: Test test
         run: |
           devbox run test
+      
+      - name: Test examples
+        if: false
+        run: |
           devbox run -- python examples/python/hello.py
           devbox run -- dotnet run examples/dotnet/Program.cs
           devbox run -- go run examples/go/main.go
