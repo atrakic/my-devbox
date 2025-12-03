@@ -2,17 +2,29 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/main/devbox.schema.json",
   "packages": [
     "go@latest",
-    "python@latest",
+    "python312",
+    "python312Packages.pip",
+    "python312Packages.pandas",
+    "python312Packages.numpy",
+    "python312Packages.matplotlib",
+    "python312Packages.seaborn",
+    "python312Packages.scikit-learn",
+    "python312Packages.jupyter",
+    "python312Packages.ipykernel",
+    "python312Packages.tkinter",
     "dotnet-sdk_10@latest",
     "nodejs@20",
     "git",
-    "uv@latest",
     "pre-commit@latest",
     "home-manager@latest",
-    "path:./flakes/localhostrun#localhostrun"
+    "path:./flakes/localhostrun#localhostrun",
+    "nodePackages.pyright@latest"
   ],
   "shell": {
-    "init_hook": [],
+    "init_hook": [
+      "export GOPATH=$HOME/go",
+      "export PATH=$PATH:$GOPATH/bin"
+    ],
     "scripts": {
       "test": [
         "echo 'Running tests...'",
@@ -20,11 +32,12 @@
         "dotnet --version && echo '.NET OK'",
         "go version && echo 'Go OK'",
         "node --version && echo 'Node.js OK'",
+        "python -c \"import pandas, numpy, matplotlib, seaborn, sklearn; print('✓ All data science packages available')\"",
         "tsc --version && echo 'TypeScript OK'"
       ],
       "setup": [
         "echo 'Setting up development environment...'",
-        "pip install --upgrade pip",
+        "go install github.com/spf13/cobra-cli@latest",
         "npm install -g npm@latest",
         "npm install -g typescript"
       ]
