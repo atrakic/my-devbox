@@ -130,6 +130,54 @@
         }
       }
     },
+    "home-manager@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#home-manager",
+      "source": "devbox-search",
+      "version": "0-unstable-2025-11-17",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6c9cgj6k73w5az5l83fhlighxh5g0r4l-home-manager-0-unstable-2025-11-17",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6c9cgj6k73w5az5l83fhlighxh5g0r4l-home-manager-0-unstable-2025-11-17"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d5lfg78srsmskwdzi9xfl2y9ksbvmvmp-home-manager-0-unstable-2025-11-17",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/d5lfg78srsmskwdzi9xfl2y9ksbvmvmp-home-manager-0-unstable-2025-11-17"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9qvkvp28sfap4i5yns9mxwwmazpdrzk4-home-manager-0-unstable-2025-11-17",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9qvkvp28sfap4i5yns9mxwwmazpdrzk4-home-manager-0-unstable-2025-11-17"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/cc739c3cpgmhjp3p49kwlbnj530p4p16-home-manager-0-unstable-2025-11-17",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/cc739c3cpgmhjp3p49kwlbnj530p4p16-home-manager-0-unstable-2025-11-17"
+        }
+      }
+    },
     "nodejs@20": {
       "last_modified": "2025-11-12T10:38:40Z",
       "plugin_version": "0.0.2",

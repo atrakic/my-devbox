@@ -7,7 +7,9 @@
     "nodejs@20",
     "git",
     "uv@latest",
-    "pre-commit@latest"
+    "pre-commit@latest",
+    "home-manager@latest",
+    "path:./flakes/localhostrun#localhostrun"
   ],
   "shell": {
     "init_hook": [],
